@@ -111,16 +111,62 @@ aside.sidebar {
   grid-area: sidebar;
   flex-direction: column;
   background: $secondary-color;
-  padding: 10px;
   width: 250px;
   height: 90vh;
 
   .user-icon-divider {
     background: #1a1a1a;
+    width: calc(100% - 20px);
     height: 150px;
-    margin-top: 5px;
+    margin: 10px auto;
     border-radius: 20px;
     transition: linear height 1s;
+  }
+
+  .sidebar-menu {
+
+    ul:first-child {
+      margin-top: 0px;
+    }
+
+
+    ul + ul {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #222;
+    }
+
+    ul.sidebar-primary-menu {
+      outline: none;
+    }
+
+    ul > li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul > li > a {
+      display: flex;
+      color: #ccc;
+      background: transparent;
+      text-decoration: none;
+      padding: 12px 0;
+      font-size: 0.9rem;
+      font-weight: 200;
+    }
+
+    ul > li > a:hover {
+      background-color: #000;
+    }
+    ul > li > a > i {
+      margin-left: 15px;
+      width: 16px;
+    }
+
+    ul > li > a > i + span {
+      margin-left: 20px;
+    }
+
   }
 }
 

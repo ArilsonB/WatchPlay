@@ -90,16 +90,50 @@ aside.sidebar {
   grid-area: sidebar;
   flex-direction: column;
   background: #111111;
-  padding: 10px;
   width: 250px;
   height: 90vh;
 }
 aside.sidebar .user-icon-divider {
   background: #1a1a1a;
+  width: calc(100% - 20px);
   height: 150px;
-  margin-top: 5px;
+  margin: 10px auto;
   border-radius: 20px;
   transition: linear height 1s;
+}
+aside.sidebar .sidebar-menu ul:first-child {
+  margin-top: 0px;
+}
+aside.sidebar .sidebar-menu ul + ul {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #222;
+}
+aside.sidebar .sidebar-menu ul.sidebar-primary-menu {
+  outline: none;
+}
+aside.sidebar .sidebar-menu ul > li {
+  display: flex;
+  flex-direction: column;
+}
+aside.sidebar .sidebar-menu ul > li > a {
+  display: flex;
+  color: #ccc;
+  background: transparent;
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+aside.sidebar .sidebar-menu ul > li > a:hover {
+  background-color: #000;
+}
+aside.sidebar .sidebar-menu ul > li > a > i {
+  margin-left: 15px;
+  width: 16px;
+}
+aside.sidebar .sidebar-menu ul > li > a > i + span {
+  margin-left: 20px;
 }
 
 main.container {
