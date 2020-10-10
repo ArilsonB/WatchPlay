@@ -1,0 +1,11 @@
+$dark-theme: false !default;
+$bg-color:  #1a1a1a !default;
+$primary-color: #0b090a !default;
+$secondary-color: #111111 !default;
+$accent-color: #ba181b !default;
+
+@if $dark-theme {
+  $primary-color: darken($primary-color, 10%);
+  $secondary-color: darken($secondary-color, 20%);
+  $accent-color: lighten($accent-color, 60%);
+}
