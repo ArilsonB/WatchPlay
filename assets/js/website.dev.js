@@ -1,4 +1,7 @@
 "use strict";
 
-var body = document.body,
-    videos = ["aaa", "aaaa"];
+var body = document.body;
+var myObj = {
+  "name": "Arilson Bolivar"
+};
+console.log(myObj);

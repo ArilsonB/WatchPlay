@@ -22,9 +22,9 @@
         </div>
         <nav class="header-menu">
           <ul class="header-menubar">
-            <li><a href="http://" class="menuitem">Home</a></li>
-            <li><a href="http://" class="menuitem">Featured</a></li>
-            <li><a href="http://" class="menuitem">My Account</a></li>
+            <li><a data-link="/" class="menuitem active"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a data-link="/featured" class="menuitem"><i class="fab fa-hotjar"></i><span>Featured</span></a></li>
+            <li><a data-link="/user" class="menuitem"><i class="fas fa-user"></i><span>Conta</span></a></li>
           </ul>
         </nav>
       </div>
@@ -43,8 +43,27 @@
     </div>
   </header>
   <aside class="sidebar">
-    <div class="user-icon-divider">
-
+    <div class="user-icon-divider" id="user-card">
+      <div class="user-interface">
+        <picture class="user-image">
+          <img src="https://i.ytimg.com/vi/wSwJdmsXN4U/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLByF2MXdUfvO3kg9xHs9Eck6q-9bw" alt="">
+        </picture>
+        <div class="user-info">
+          <div class="user-id">
+            <span>Olá, Arilson&nbsp;Bolivar</span>
+          </div>
+          <div class="user-options">
+            <ul class="user-options-list">
+              <li><a href="http://"><i class="fas fa-tv"></i><span>Meu Canal</span></a></li>
+              <li><a href="http://"><i class="fas fa-cog"></i><span>Configurações</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="user-extra">
+          <a href="" class="user-btn"><i class="fas fa-times"></i><span>Logout</span></a>
+          <a href="" class="user-btn"><i class="fas fa-upload"></i><span>Upload</span></a>
+      </div>
     </div>
     <div class="sidebar-menu">
       <ul class="sidebar-primary-menu">
@@ -293,5 +312,6 @@
       </div>
     </section>
   </main>
+  <script src="assets/js/web.prod.js"></script>
 </body>
 </html>

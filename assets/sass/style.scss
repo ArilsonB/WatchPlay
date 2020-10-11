@@ -16,6 +16,7 @@ header {
   width: 100%;
   height: 10vh;
   background: $primary-color;
+  border-bottom: 1px solid #000;
 
   .header-container {
     display: flex;
@@ -46,7 +47,7 @@ header {
 
       nav.header-menu {
         display: flex;
-        margin-left: 20px;
+        margin-left: 63px;
         align-items: center;
 
         ul.header-menubar {
@@ -58,25 +59,43 @@ header {
             display: flex;
             align-items: center;
             border-right: 1px solid #111;
+            &:first-child {
+              border-left: 1px solid #111;
+            }
           }
 
           li a {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             background: transparent;
             text-decoration: none;
             text-transform: uppercase;
-            padding: 0 15px;
-            line-height: 13vh;
             height: 10vh;
             color: #fff;
-            font-weight: 700;
-            font-size: 14px;
-            transition: ease-in-out color .5s;
+            font-size: 0.9rem;
+            transition: background-color .5s ease, linear color .5s;
+            width: 100px;
+            cursor: pointer;
+
+            &.active {
+              color: $accent-color;
+              background-color: #000;
+              border-bottom: 1px solid $accent-color;
+            }
 
             &:hover {
               background: #111;
               color: $accent-color;
+            }
+
+            i {
+              font-size: 1.1rem;
+            }
+
+            span {
+              margin-top: 8px;
             }
           }
         }
@@ -113,14 +132,106 @@ aside.sidebar {
   background: $secondary-color;
   width: 250px;
   height: 90vh;
+  overflow-y: scroll;
 
   .user-icon-divider {
+    display: flex;
+    flex-direction: column;
     background: #1a1a1a;
     width: calc(100% - 20px);
-    height: 150px;
+    height: 110px;
     margin: 10px auto;
     border-radius: 20px;
-    transition: linear height 1s;
+    transition: linear height .5s;
+
+    .user-interface {
+      display: flex;
+      flex-direction: row;
+      picture.user-image {
+        border-radius: 20px 0 0 20px;
+        height: 110px;
+        width: 110px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px 0 0 20px;
+        }
+      }
+
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 10px;
+        color: #fff;
+        flex:1;
+        .user-id {
+          display: flex;
+          justify-content: center;
+          span {
+            font-weight: bold;
+          }
+        }
+        .user-options {
+          margin-top: 5px;
+          display: flex;
+          ul.user-options-list {
+            display: flex;
+            flex-direction: column;
+            flex:1;
+            li > a {
+              flex: 1;
+              display: flex;
+              text-decoration: none;
+              border-radius: 5px;
+              color: #ddd;
+              font-size: 0.7rem;
+              padding: 6px 6px;
+              margin-top: 5px;
+              background: #111;
+              span {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+    }
+  }
+  .user-extra {
+    display: grid;
+    visibility: hidden;
+    opacity: 0;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    padding: 10px;
+    transition: all linear .5s;
+    border-top: 1px solid #000;
+    margin-top: -3px;
+
+    a.user-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 20px;
+      background: #111;
+      flex: 1;
+      transition: all linear .5s;
+
+      i {
+        font-size: 1.3rem;
+      }
+      span {
+        margin-top: 15px;
+      }
+    }
+  }
   }
 
   .sidebar-menu {
@@ -260,6 +371,7 @@ main.container {
         display: grid;
         grid-gap: 10px;
         grid-auto-flow: column dense;
+        justify-content: space-between;
 
         .box {
           padding: 0;
@@ -357,3 +469,4 @@ main.container {
 
 @import 'buttons';
 @import 'inputs';
+@import 'big_screen';

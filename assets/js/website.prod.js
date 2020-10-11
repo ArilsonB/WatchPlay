@@ -1,1 +1,1 @@
-"use strict";var body=document.body,videos=["aaa","aaaa"];
+"use strict";var body=document.body,myObj={name:"Arilson Bolivar"};console.log(myObj);
